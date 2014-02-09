@@ -31,16 +31,56 @@
 	    </header>
 	    {{outlet}}
   	</script>
+  	
+  	<script type="text/x-handlebars" data-template-name="lessons">
+  		<div class="container col-md-2">
+  			<h2 class="text-center"> Lessons </h2>
+  			<hr>
+  			<ul class="nav nav-pills nav-stacked">
+  				{{#each model}}
+  					<li>{{#link-to "lesson" this activeClass="selected"}}{{title}}{{/link-to}}</li>
+  				{{/each}}
+  			</ul>
+  		</div>
+  		{{outlet}}
+  	</script>
+  	
+  	<script type="text/x-handlebars" data-template-name="lesson">
+  		<div class="container col-md-2">
+  			<h2 class="text-center"> Tasks </h2>
+  			<hr>
+  			<ul class="nav nav-pills nav-stacked">
+  				{{#each task in tasks}}
+  					<li>{{#link-to "task" task activeClass="selected"}}{{task.title}}{{/link-to}}</li>
+  				{{/each}}
+  			</ul>
+  		</div>
+  		{{outlet}}
+  	</script>
+
+  	<script type="text/x-handlebars" data-template-name="task">
+  		<div class="container col-md-4">
+  			<h1>{{title}}</h1>
+  		</div>
+  	</script> 
+
 
   	<script type="text/x-handlebars" data-template-name="apply">
   		<div class="container col-md-4 col-md-offset-4 panel panel-default apply-form">
   			<div class="panel-body">
 	  			<h2 class="text-center">Apply & Join us</h2>
+	  			<p> Tic Tac Toe in your favorite programming language</p>
 	  			<hr>
 		  		<form role="form">
 		  			<div class="form-group">
 		  				<div class="input-group input-group-lg">
-  							<span class="input-group-addon">@</span>
+  							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		    				<input type="text" class="form-control" placeholder="Github">
+							</div>
+						</div>
+						<div class="form-group">
+		  				<div class="input-group input-group-lg">
+  							<span class="input-group-addon"><i class="glyphicon">@</i></span>
 		    				<input type="email" class="form-control" placeholder="Email">
 							</div>
 		    		</div>
@@ -59,5 +99,10 @@
   	<!-- Application -->
 		<script src="js/application.js"></script>
 		<script src="js/router.js"></script>
+
+
+  	<!-- Models -->
+		<script src="js/models/lesson.js"></script>
+		<script src="js/models/task.js"></script>
   </body>
  </html>

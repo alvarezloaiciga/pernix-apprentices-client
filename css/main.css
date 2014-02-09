@@ -7,3 +7,10 @@ body {
 .apply-form {
 	margin-top: 30px;
 }
+
+.nav-pills > li > a.selected,
+.nav-pills > li > a.selected:hover,
+.nav-pills > li > a.selected:focus {
+  color: #ffffff;
+  background-color: #428bca;
+}
