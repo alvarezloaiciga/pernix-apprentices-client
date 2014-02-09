@@ -19,4 +19,5 @@ App.Lesson.FIXTURES = [
 		title: "Lesson 3",
 		tasks: []
 	}
-]
+];
+

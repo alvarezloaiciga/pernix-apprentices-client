@@ -24,4 +24,5 @@ App.Task.FIXTURES = [
 		description: "Given this and this and this",
 		objective: "Learn ruby & test unit"
 	},
-]
+];
+
