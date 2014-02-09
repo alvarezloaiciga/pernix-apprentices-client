@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Apprenticeship Program</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+  	<script type="text/x-handlebars">
+	    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          {{#link-to 'lessons' class="navbar-brand"}}Pernix Apprentices{{/link-to}}
+	        </div>
+	        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li>{{#link-to 'sign_in'}}Sign in{{/link-to}}</li>
+	            <li>{{#link-to 'apply'}}Apply{{/link-to}}</li>
+	            <li>{{#link-to 'lessons'}}Lessons{{/link-to}}</li>
+	          </ul>
+	        </nav>
+	      </div>
+	    </header>
+	    {{outlet}}
+  	</script>
+
+  	<script type="text/x-handlebars" data-template-name="apply">
+  		<div class="container col-md-4 col-md-offset-4 panel panel-default apply-form">
+  			<div class="panel-body">
+	  			<h2 class="text-center">Apply & Join us</h2>
+	  			<hr>
+		  		<form role="form">
+		  			<div class="form-group">
+		  				<div class="input-group input-group-lg">
+  							<span class="input-group-addon">@</span>
+		    				<input type="email" class="form-control" placeholder="Email">
+							</div>
+		    		</div>
+		    		<button type="submit" class="btn btn-primary pull-right">Apply</button>
+		  		</form>
+	  		</div>
+  		</div>
+  	</script>
+
+  	<!-- Libs -->
+  	<script src="js/libs/jquery.min.js"></script>
+  	<script src="js/libs/handlebars.js"></script>
+  	<script src="js/libs/ember.js"></script>
+  	<script src="js/libs/ember-data.js"></script>
+
+  	<!-- Application -->
+		<script src="js/application.js"></script>
+		<script src="js/router.js"></script>
+  </body>
+ </html>
