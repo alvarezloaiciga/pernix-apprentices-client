@@ -24,6 +24,7 @@ App.LessonRoute = Ember.Route.extend({
 App.LessonTaskRoute = Ember.Route.extend({
 	model: function(params){
 		console.log(params);
+		console.log(this.store.find('task', params.task_id).get('length'));
 		return this.store.find('task', params.task_id);
 	}
 });
