@@ -57,11 +57,20 @@
   		{{outlet}}
   	</script>
 
-  	<script type="text/x-handlebars" data-template-name="task">
-  		<div class="container col-md-4">
-  			<h1>{{title}}</h1>
-  		</div>
-  	</script> 
+    <script type="text/x-handlebars" data-template-name="task">
+      <div class="container col-md-4 panel panel-default task-show">
+        <h1>{{title}}</h1>
+      
+        <div class="panel-heading">Objective</div>
+        <div class="panel-body">{{objective}}</div>
+
+
+        <div class="panel-heading">Description</div>
+        <div class="panel-body">
+          {{{markdown}}}
+        </div>
+      </div>
+    </script> 
 
 
   	<script type="text/x-handlebars" data-template-name="apply">

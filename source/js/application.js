@@ -6,3 +6,4 @@ App.ApplicationAdapter = DS.RESTAdapter.reopen({
 });
 
 App.ApplicationSerializer = DS.ActiveModelSerializer.extend({});
+App.ShowdownConverter = new Showdown.converter();
