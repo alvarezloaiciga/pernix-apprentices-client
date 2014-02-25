@@ -58,12 +58,11 @@
   	</script>
 
     <script type="text/x-handlebars" data-template-name="task">
-      <div class="container col-md-4 panel panel-default task-show">
+      <div class="container col-md-7 panel panel-default task-show">
         <h1>{{title}}</h1>
       
         <div class="panel-heading">Objective</div>
         <div class="panel-body">{{objective}}</div>
-
 
         <div class="panel-heading">Description</div>
         <div class="panel-body">
@@ -73,30 +72,38 @@
     </script> 
 
 
-  	<script type="text/x-handlebars" data-template-name="apply">
-  		<div class="container col-md-4 col-md-offset-4 panel panel-default apply-form">
-  			<div class="panel-body">
-	  			<h2 class="text-center">Apply & Join us</h2>
-	  			<p> Tic Tac Toe in your favorite programming language</p>
-	  			<hr>
-		  		<form role="form">
-		  			<div class="form-group">
-		  				<div class="input-group input-group-lg">
-  							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		    				<input type="text" class="form-control" placeholder="Github">
-							</div>
-						</div>
-						<div class="form-group">
-		  				<div class="input-group input-group-lg">
-  							<span class="input-group-addon"><i class="glyphicon">@</i></span>
-		    				<input type="email" class="form-control" placeholder="Email">
-							</div>
-		    		</div>
-		    		<button type="submit" class="btn btn-primary pull-right">Apply</button>
-		  		</form>
-	  		</div>
-  		</div>
-  	</script>
+    <script type="text/x-handlebars" data-template-name="apply">
+      <div class="container col-md-4 col-md-offset-4 panel panel-default apply-form">
+        <div class="panel-body">
+          <h2 class="text-center">Apply & Join us</h2>
+          <p> Tic Tac Toe in your favorite programming language</p>
+          <hr>
+          {{#if applySuccess}}
+            <div class="alert alert-success">Thanks!, Just give us some time to review your code :)</div>
+          {{else}}
+            <div class="alert alert-error">Sorry!, update the form</div>
+          {{/if}}
+          <form role="form">
+            <div class="form-group">
+              <div class="input-group input-group-lg has-feedback" {{bind-attr class="githubError:has-error"}}>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                {{view App.RequiredTextFieldView viewName='github' valueBinding='github' class="form-control" placeholder="Github"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-lg has-feedback" {{bind-attr class="emailError:has-error"}}>
+                <span class="input-group-addon"><i class="glyphicon">@</i></span>
+                {{view App.RequiredTextFieldView viewName='email' valueBinding='email' class="form-control" placeholder="Email"}}
+              </div>
+              </div>
+            </div>
+            {{#if validForm}}
+              <button type="submit" class="btn btn-primary pull-right" {{action "createApplicant"}}>Apply</button>
+            {{/if}}
+          </form>
+        </div>
+      </div>
+    </script>
 
   	<!-- Libs -->
   	<script src="application.js"></script>

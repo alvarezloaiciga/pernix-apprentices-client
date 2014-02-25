@@ -16,6 +16,10 @@ input "source" do
     concat "application.js"
   end
 
+  match "js/views/*.js" do
+    concat "application.js"
+  end
+
   match "js/*.js" do
     concat "application.js"
   end
